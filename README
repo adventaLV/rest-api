@@ -7,16 +7,9 @@ GET 	api/users 	get all users
 
 
 Домашнее задание>
-сделать HTML - страницу в которой будет форма типа>
-
-
-<form method=POST url= localhost:3000 ...>
-
-<input name .... >
-<input description ... >
-<checkbox value= true ...>
-
-<submit ... >
+скачать и установить проект
+инициализировать базу данных> app/models/users.sql
+проверить с помощью curl GET запрос
 
 
 
