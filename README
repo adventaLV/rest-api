@@ -1,16 +1,14 @@
 server/api
 
-Method 	URL 		Action
+URL             Method 	 	Action
 
-POST	api/users	add new user
-GET 	api/users 	get all users
+api/users       POST	    add new user
+api/users       GET 	    get all users
+app/users/:id   GET         get user by id
+...
 
 
 Домашнее задание>
-скачать и установить проект
-инициализировать базу данных> app/models/users.sql
-проверить с помощью curl GET запрос
+init table in form.html 
 
 
-
-</form>

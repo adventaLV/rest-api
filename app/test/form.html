@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>    
+</head>
+<body onload="init()">
+
+    <form id="myForm">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name">
+        <br>
+        <label for="description">Description</label>
+        <input type="text" id="description" name="description">
+        <br>
+        <input type="submit" value="Go!">
+
+    </form>
+
+
+    <script>
+        myForm.onsubmit = async (e) => {
+            // event e
+            e.preventDefault();
+
+            let formData = new FormData(myForm);
+
+            json_data = JSON.stringify(Object.fromEntries(formData));
+
+            let req = await fetch('http://localhost:3000/api/users',{
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: json_data
+            })
+
+            let res = await req.json();
+
+            console.log(res);
+
+        }
+
+
+        function init() {
+            fetch('http://localhost:3000/api/users')
+            .then(res => res.json())
+            .then(out => console.log(out))
+            .catch(err => console.error(err));
+
+            
+
+
+        }
+
+
+    </script>
+
+    
+</body>
+</html>
