@@ -72,6 +72,14 @@
 
         function initTable(out) {
             var table = document.getElementById('myTable');
+
+            var tableRows = table.getElementsByTagName('tr');
+            var rowCount = tableRows.length;
+
+            for (var x = rowCount - 1; x > 0; x--) {
+                table.deleteRow(x);
+            }
+
             for (let index = 0; index < out.length; index++) {
                 const elm = out[index];
                 
@@ -83,9 +91,6 @@
                 cell_id.innerHTML= elm.id;
                 cell_name.innerHTML=elm.name;
                 cell_description.innerHTML = elm.description;
-
-
-
             }
         }
 
