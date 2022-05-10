@@ -5,10 +5,11 @@ URL             Method 	 	Action
 api/users       POST	    add new user
 api/users       GET 	    get all users
 app/users/:id   GET         get user by id
+app/users/:id   DELETE      delte user by id
 ...
 
 
 Домашнее задание>
-init table in form.html 
+
 
 

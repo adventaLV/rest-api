@@ -4,9 +4,29 @@
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Page Title</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>    
+    <meta name='viewport' content='width=device-width, initial-scale=1'>           
 </head>
 <body onload="init()">
+
+<h1>Hello users</h1>
+    <table border="1" id="myTable">
+
+        <tr>
+            <th>
+                Id
+            </th>
+
+            <th>
+                Name
+            </th>
+            <th>
+                Description
+            </th>
+        </tr>
+
+
+    </table>
+
 
     <form id="myForm">
         <label for="name">Name</label>
@@ -36,6 +56,7 @@
             })
 
             let res = await req.json();
+            init();
 
             console.log(res);
 
@@ -45,12 +66,27 @@
         function init() {
             fetch('http://localhost:3000/api/users')
             .then(res => res.json())
-            .then(out => console.log(out))
+            .then(out => initTable(out))
             .catch(err => console.error(err));
+        }
 
-            
+        function initTable(out) {
+            var table = document.getElementById('myTable');
+            for (let index = 0; index < out.length; index++) {
+                const elm = out[index];
+                
+                var row = table.insertRow(index + 1);
+                var cell_id = row.insertCell(0);
+                var cell_name = row.insertCell(1);
+                var cell_description = row.insertCell(2);
+
+                cell_id.innerHTML= elm.id;
+                cell_name.innerHTML=elm.name;
+                cell_description.innerHTML = elm.description;
 
 
+
+            }
         }
 
 

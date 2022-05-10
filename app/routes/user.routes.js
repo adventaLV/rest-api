@@ -6,6 +6,8 @@ module.exports = app =>{
     router.post("/", user.create);
     // get all users
     router.get("/", user.getAll);
+    // delete user with id
+    router.delete("/:id", user.delete);
     
     app.use('/api/users', router);
 }

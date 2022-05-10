@@ -10,13 +10,10 @@ app.use(express.json());
 // request - content type application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 
-// simple route
-app.get("/", (req, res) => {
+// public directory
+app.use(express.static('app/public'));
 
-    res.json({ message: "welcome to my first REST API" });
-
-});
-
+// routing
 require("./app/routes/user.routes")(app);
 const PORT = process.env.PORT || 3000;
 
