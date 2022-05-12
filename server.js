@@ -10,6 +10,13 @@ app.use(express.json());
 // request - content type application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 
+// set middleware
+app.use(function (req, res, next) {
+    console.log('Time:', Date.now());
+    console.log(req.hostname);
+    next();
+})
+
 // public directory
 app.use(express.static('app/public'));
 

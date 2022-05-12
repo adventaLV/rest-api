@@ -4,10 +4,12 @@ module.exports = app =>{
 
     // add new user
     router.post("/", user.create);
+    // get user by id
+    router.get("/:id", user.findById);
     // get all users
     router.get("/", user.getAll);
     // delete user with id
-    router.delete("/:id", user.delete);
+    router.delete("/:id", user.delete);    
     
     app.use('/api/users', router);
 }

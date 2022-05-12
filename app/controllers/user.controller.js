@@ -32,10 +32,24 @@ exports.create = (req, res) => {
     })
 };
 
+// find user by id
+exports.findById = (req, res) => {
+    // 
+    User.findOne(req.params.id, (err, data)=>{
+        if (err) {
+            res.status(500).send({ message: err.message || "Some error occured at get user by id" });
+        } else {
+            res.send(data);
+        }
+    });
+}
+
+
+
 // get all users
 exports.getAll = (req, res) => {
     // find users
-    User.getAll((err, data) => {
+    User.findAll((err, data) => {
         if (err) {
             res.status(500).send({ message: err.message || "Some error occured at get all users" });
         } else {

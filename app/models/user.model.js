@@ -19,7 +19,25 @@ User.create = (newUser, result) => {
     })
 };
 
-User.getAll = result => {
+User.findOne = (id, result) => {
+    sql.query(`SELECT * FROM users WHERE id = ${id}`, (err, res) => {
+        if (err) {
+            console.log("Error: " + err);
+            result(null, err);
+            return;
+        }
+        if(res.length) {
+            console.log("user found");
+            result(null, res[0]);
+            return;
+        }
+
+
+    });
+}
+
+
+User.findAll = result => {
     let query = "SELECT * FROM users";
     sql.query(query, (err, res) => {
         if (err) {

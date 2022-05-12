@@ -24,6 +24,7 @@
                 Description
             </th>
         </tr>
+        <!--  add rtable row  -->
 
 
     </table>
@@ -88,11 +89,20 @@
                 var cell_id = row.insertCell(0);
                 var cell_name = row.insertCell(1);
                 var cell_description = row.insertCell(2);
+                // add delete cell
 
                 cell_id.innerHTML= elm.id;
                 cell_name.innerHTML=elm.name;
                 cell_description.innerHTML = elm.description;
+                // add delete symbol + call function  by onclick (optianal prompt YES/NO)
             }
+        }
+
+
+        function deleteUser(userId) {
+
+            // 
+            // await fetch to  Method DELETE to  api/users/:id 
         }
 
 
