@@ -1,3 +1,6 @@
+/**
+ * Test -  read .env 
+ */
 require("dotenv").config();
 
 console.log(process.env.HOST);

@@ -1,15 +1,29 @@
-server/api
+
+Webskola.lv School NodeJS Tutorial
+Simple REST API application
+
+1. initialize the MariaDB(mySQL) database first (e.g. using XAMPP)
+    1a. see models/user.sql for user table
+    1b. see config/db.config.js for database
+2. npm start
+3. Go to localhost:3000/api/users
+4. develop the project further independently
+
+
+
+Routing - %server%/api
 
 URL             Method 	 	Action
 
 api/users       POST	    add new user
 api/users       GET 	    get all users
+...
 app/users/:id   GET         get user by id
 app/users/:id   DELETE      delte user by id
 ...
 
 
-Домашнее задание>
+
 
 
 
